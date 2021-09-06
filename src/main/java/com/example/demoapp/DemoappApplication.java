@@ -11,11 +11,10 @@ public class DemoappApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DemoappApplication.class, args);
-
 		System.out.print(context.getBeanDefinitionCount());
 
 		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
-		
+
 		for (String beanDefinitionName : context.getBeanDefinitionNames()) {
 			System.out.println(beanDefinitionName);
 		}
