@@ -20,4 +20,10 @@ class EmployeeControllerTest {
         assertEquals(2, result.length);
         assertEquals(999, result[0].getId());
     }
+
+    @Test
+    public void getEmployeeByIdTest(){
+        Employee result = restTemplate.getForObject("/employees/99", Employee.class);
+        assertEquals(99, result.getId());
+    }
 }
