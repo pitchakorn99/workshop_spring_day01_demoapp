@@ -3,10 +3,7 @@ package com.example.demoapp.employees;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 @RestController
 public class EmployeeController {
@@ -15,8 +12,11 @@ public class EmployeeController {
         Employee employee1 = new Employee();
         employee1.setId(999);
         employee1.setName("Pitchakorn");
-        
-        Employee[] employees = new Employee[]{employee1};
+        Employee employee2 = new Employee();
+        employee1.setId(999);
+        employee1.setName("Pitchakorn 2");
+
+        Employee[] employees = new Employee[]{employee1, employee2};
         return employees;
     }
 }
