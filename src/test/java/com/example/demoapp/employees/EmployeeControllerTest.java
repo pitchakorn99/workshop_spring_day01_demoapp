@@ -18,7 +18,7 @@ class EmployeeControllerTest {
         Employee[] result = restTemplate.getForObject("/employees", Employee[].class);
         //Assert
         assertEquals(2, result.length);
-        assertEquals(999, result[0].getId());
+        assertEquals(998, result[0].getId());
     }
 
     @Test
