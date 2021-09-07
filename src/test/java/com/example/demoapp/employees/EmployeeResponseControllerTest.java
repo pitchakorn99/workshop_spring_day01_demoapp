@@ -32,5 +32,6 @@ class EmployeeResponseControllerTest {
 
         EmployeeResponse result = restTemplate.getForObject("/employees/1", EmployeeResponse.class);
         assertEquals(1, result.getId());
+        assertEquals("pitchakorn", result.getName());
     }
 }
