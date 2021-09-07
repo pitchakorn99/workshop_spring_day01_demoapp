@@ -15,9 +15,9 @@ public class DemoappApplication {
 
 		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 
-		for (String beanDefinitionName : context.getBeanDefinitionNames()) {
-			System.out.println(beanDefinitionName);
-		}
+//		for (String beanDefinitionName : context.getBeanDefinitionNames()) {
+//			System.out.println(beanDefinitionName);
+//		}
 
 	}
 
