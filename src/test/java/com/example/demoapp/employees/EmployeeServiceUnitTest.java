@@ -43,6 +43,8 @@ public class EmployeeServiceUnitTest {
 
         String message;
 
+        when(employeeRepository.findById(1)).thenReturn(Optional.empty());
+
         try{
             EmployeeService employeeService = new EmployeeService();
             employeeService.setEmployeeService(employeeRepository);
