@@ -16,7 +16,7 @@ public class EmployeeControllerAdvice {
         errorResponse.setCode(404);
         errorResponse.setMessage(exception.getMessage());
 
-        return new ResponseEntity<ErrorResponse>(errorResponse, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 
 }
