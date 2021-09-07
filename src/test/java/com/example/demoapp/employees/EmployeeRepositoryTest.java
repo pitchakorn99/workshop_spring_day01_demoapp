@@ -33,7 +33,6 @@ public class EmployeeRepositoryTest {
     public void case02(){
         int id = 1;
         Optional<Employee> employee = employeeRepository.findById(id);
-        assertTrue(employee.isPresent());
-        assertEquals(1, employee.get().getId());
+        assertTrue(!employee.isPresent());
     }
 }
