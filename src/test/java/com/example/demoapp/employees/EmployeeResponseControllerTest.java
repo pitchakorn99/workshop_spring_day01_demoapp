@@ -13,6 +13,9 @@ class EmployeeResponseControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
     @Test
     public void listEmployeeTest(){
         EmployeeResponse[] result = restTemplate.getForObject("/employees", EmployeeResponse[].class);
@@ -23,7 +26,11 @@ class EmployeeResponseControllerTest {
 
     @Test
     public void getEmployeeByIdTest(){
-        EmployeeResponse result = restTemplate.getForObject("/employees/99", EmployeeResponse.class);
-        assertEquals(99, result.getId());
+        Employee insEmployee = new Employee();
+        insEmployee.setName("pitchakorn");
+        employeeRepository.save(insEmployee);
+
+        EmployeeResponse result = restTemplate.getForObject("/employees/1", EmployeeResponse.class);
+        assertEquals(1, result.getId());
     }
 }
