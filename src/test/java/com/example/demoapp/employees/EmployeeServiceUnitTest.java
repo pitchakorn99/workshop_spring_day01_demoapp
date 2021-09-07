@@ -36,4 +36,23 @@ public class EmployeeServiceUnitTest {
         assertEquals(1, rtesult.getId());
         assertEquals("pitchakorn", rtesult.getName());
     }
+
+    @Test
+    @DisplayName("Failure case")
+    public void case02(){
+
+        String message;
+
+        try{
+            EmployeeService employeeService = new EmployeeService();
+            employeeService.setEmployeeService(employeeRepository);
+            EmployeeResponse rtesult = employeeService.getById(1);
+
+            message = null;
+        }catch (Exception ex){
+            message = ex.getMessage();
+        }
+
+        assertEquals("Employee not found id=1", message);
+    }
 }
