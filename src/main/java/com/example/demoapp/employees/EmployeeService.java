@@ -8,8 +8,12 @@ import java.util.Optional;
 @Service
 public class EmployeeService {
 
-    @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    public void setEmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
 
     public EmployeeResponse getById(int id){
         /*EmployeeResponse employeeResponse1 = new EmployeeResponse();
@@ -25,4 +29,6 @@ public class EmployeeService {
         }
         throw new EmployeeNotFoundException("Employee not found id="+id);
     }
+
+
 }
