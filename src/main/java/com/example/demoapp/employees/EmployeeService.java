@@ -4,11 +4,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeService {
-    public Employee getById(int id){
-        Employee employee1 = new Employee();
-        employee1.setId(id);
-        employee1.setName("Pitchakorn");
+    public EmployeeResponse getById(int id){
+        EmployeeResponse employeeResponse1 = new EmployeeResponse();
+        employeeResponse1.setId(id);
+        employeeResponse1.setName("Pitchakorn");
 
-        return employee1;
+        return employeeResponse1;
     }
 }

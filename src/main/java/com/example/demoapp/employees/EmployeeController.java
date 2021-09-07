@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
-
 @RestController
 public class EmployeeController {
 
@@ -14,20 +12,20 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @GetMapping("/employees")
-    public Employee[] listEmployee(){
-        Employee employee1 = new Employee();
-        employee1.setId(999);
-        employee1.setName("Pitchakorn");
-        Employee employee2 = new Employee();
-        employee1.setId(998);
-        employee1.setName("Pitchakorn 2");
+    public EmployeeResponse[] listEmployee(){
+        EmployeeResponse employeeResponse1 = new EmployeeResponse();
+        employeeResponse1.setId(999);
+        employeeResponse1.setName("Pitchakorn");
+        EmployeeResponse employeeResponse2 = new EmployeeResponse();
+        employeeResponse1.setId(998);
+        employeeResponse1.setName("Pitchakorn 2");
 
-        Employee[] employees = new Employee[]{employee1, employee2};
-        return employees;
+        EmployeeResponse[] employeeResponses = new EmployeeResponse[]{employeeResponse1, employeeResponse2};
+        return employeeResponses;
     }
 
     @GetMapping("/employees/{id}")
-    public Employee getEmployeeById(@PathVariable String id){
+    public EmployeeResponse getEmployeeById(@PathVariable String id){
         return employeeService.getById((Integer.parseInt(id)));
     }
 }

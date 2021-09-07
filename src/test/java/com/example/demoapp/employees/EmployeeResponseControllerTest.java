@@ -8,14 +8,14 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class EmployeeControllerTest {
+class EmployeeResponseControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
 
     @Test
     public void listEmployeeTest(){
-        Employee[] result = restTemplate.getForObject("/employees", Employee[].class);
+        EmployeeResponse[] result = restTemplate.getForObject("/employees", EmployeeResponse[].class);
         //Assert
         assertEquals(2, result.length);
         assertEquals(998, result[0].getId());
@@ -23,7 +23,7 @@ class EmployeeControllerTest {
 
     @Test
     public void getEmployeeByIdTest(){
-        Employee result = restTemplate.getForObject("/employees/99", Employee.class);
+        EmployeeResponse result = restTemplate.getForObject("/employees/99", EmployeeResponse.class);
         assertEquals(99, result.getId());
     }
 }
