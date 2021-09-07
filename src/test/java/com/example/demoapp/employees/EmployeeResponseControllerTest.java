@@ -30,7 +30,7 @@ class EmployeeResponseControllerTest {
         insEmployee.setName("pitchakorn");
         employeeRepository.save(insEmployee);
 
-        EmployeeResponse result = restTemplate.getForObject("/employees/1", EmployeeResponse.class);
+        EmployeeResponse result = restTemplate.getForObject("/employees/99", EmployeeResponse.class);
         assertEquals(1, result.getId());
         assertEquals("pitchakorn", result.getName());
     }
